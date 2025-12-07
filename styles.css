@@ -1,18 +1,18 @@
 :root {
     /* --- Color Palette --- */
-    --header-bg: #111827;       /* Dark Navy for Navbar */
+    --header-bg: #111827;       /* Dark Navy */
     --bg-main: #F3F4F6;         /* Light Grey Background */
     --card-bg: #FFFFFF;         /* White Card Background */
     
     /* Brand Accents */
-    --accent-cyan: #06b6d4;     /* Primary Action / Brand Color */
+    --accent-cyan: #06b6d4;     /* Primary Action */
     --accent-teal: #14b8a6;     /* Secondary Teal */
-    --accent-green: #10b981;    /* Success / Eco Green */
+    --accent-green: #10b981;    /* Success Green */
     --accent-blue: #3b82f6;     /* Info Blue */
     
     /* Text Colors */
-    --text-dark: #111827;       /* Primary Text */
-    --text-grey: #6b7280;       /* Secondary Text */
+    --text-dark: #111827;
+    --text-grey: #6b7280;
     --text-white: #ffffff;
     
     /* UI Variables */
@@ -20,7 +20,6 @@
     --radius-card: 16px;
     --radius-sm: 8px;
     --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 /* --- Reset & Base --- */
@@ -32,6 +31,9 @@ body {
     color: var(--text-dark);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 a { text-decoration: none; color: inherit; transition: 0.2s; }
@@ -68,32 +70,20 @@ button { font-family: inherit; }
 }
 
 .logo-icon {
-    width: 32px;
-    height: 32px;
+    width: 32px; height: 32px;
     background-color: var(--accent-cyan);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.1rem;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1.1rem;
 }
 
-.nav-links {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
+.nav-links { display: flex; gap: 20px; align-items: center; }
 
 .nav-item {
-    color: #9ca3af; /* Light grey */
-    font-size: 0.95rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 6px;
+    color: #9ca3af;
+    font-size: 0.95rem; font-weight: 500;
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 16px; border-radius: 6px;
 }
 
 .nav-item:hover { color: white; }
@@ -105,16 +95,12 @@ button { font-family: inherit; }
 }
 
 .nav-profile {
-    width: 36px;
-    height: 36px;
+    width: 36px; height: 36px;
     border-radius: 50%;
     background-color: var(--accent-cyan);
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600; cursor: pointer;
 }
 
 /* --- Layout Wrapper --- */
@@ -122,6 +108,8 @@ button { font-family: inherit; }
     max-width: 1400px;
     margin: 0 auto;
     padding: 40px 30px;
+    width: 100%;
+    flex: 1;
 }
 
 /* --- Shared Page Headers --- */
@@ -130,37 +118,22 @@ button { font-family: inherit; }
 .page-heading p { color: var(--text-grey); font-size: 1rem; }
 .section-subheading { font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; color: var(--text-dark); }
 
-
-/* =========================================
-   DASHBOARD (Index) Styles
-   ========================================= */
-
+/* --- DASHBOARD STYLES --- */
 .welcome-header { margin-bottom: 30px; }
 .sub-label { color: var(--accent-cyan); font-weight: 600; font-size: 0.9rem; margin-bottom: 4px; }
 .welcome-header h1 { font-size: 2.25rem; font-weight: 700; color: var(--text-dark); }
-.welcome-header p { color: var(--text-grey); }
 
 .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-bottom: 30px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 30px;
 }
-
 .stat-card {
-    background: var(--card-bg);
-    border-radius: var(--radius-card);
-    padding: 24px;
-    box-shadow: var(--shadow-soft);
-    display: flex;
-    flex-direction: column;
+    background: var(--card-bg); border-radius: var(--radius-card);
+    padding: 24px; box-shadow: var(--shadow-soft);
+    display: flex; flex-direction: column;
 }
-
 .stat-icon-wrapper { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
 .stat-icon {
-    width: 48px; height: 48px;
-    background-color: #ecfeff; /* Light Cyan */
-    border-radius: 12px;
+    width: 48px; height: 48px; background-color: #ecfeff; border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
     color: var(--accent-cyan); font-size: 1.4rem;
 }
@@ -169,20 +142,12 @@ button { font-family: inherit; }
 .stat-value { font-size: 2rem; font-weight: 700; color: var(--text-dark); line-height: 1.1; margin-bottom: 4px; }
 .stat-subtext { font-size: 0.85rem; color: #9ca3af; }
 
-.dashboard-split {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 24px;
-}
-
+.dashboard-split { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
 .sessions-panel {
-    background: var(--card-bg);
-    border-radius: var(--radius-card);
-    padding: 24px;
-    box-shadow: var(--shadow-soft);
+    background: var(--card-bg); border-radius: var(--radius-card);
+    padding: 24px; box-shadow: var(--shadow-soft);
 }
 .panel-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 24px; }
-
 .session-list { display: flex; flex-direction: column; gap: 16px; }
 .session-item {
     display: flex; align-items: center; justify-content: space-between;
@@ -201,9 +166,7 @@ button { font-family: inherit; }
 
 .impact-box {
     background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%);
-    border-radius: var(--radius-card);
-    padding: 30px;
-    color: white;
+    border-radius: var(--radius-card); padding: 30px; color: white;
     display: flex; flex-direction: column; justify-content: space-between;
 }
 .impact-title { font-size: 1.2rem; margin-bottom: 30px; font-weight: 600; }
@@ -217,19 +180,11 @@ button { font-family: inherit; }
 .impact-val { font-size: 1.8rem; font-weight: 700; }
 .impact-footer { background: rgba(0,0,0,0.1); padding: 15px; border-radius: 8px; font-size: 0.9rem; margin-top: auto; }
 
-
-/* =========================================
-   BOOKING PAGE Styles
-   ========================================= */
-
+/* --- BOOKING PAGE STYLES --- */
 .filter-container { margin-bottom: 40px; }
 .filter-tabs {
-    display: inline-flex;
-    background-color: #e5e7eb;
-    padding: 4px;
-    border-radius: 50px;
-    gap: 4px;
-    width: 100%; max-width: 800px;
+    display: inline-flex; background-color: #e5e7eb; padding: 4px;
+    border-radius: 50px; gap: 4px; width: 100%; max-width: 800px;
 }
 .filter-tab {
     flex: 1; border: none; background: transparent; padding: 10px 20px;
@@ -240,9 +195,7 @@ button { font-family: inherit; }
 .filter-tab.active { background-color: white; color: var(--text-dark); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
 .filter-tab:hover:not(.active) { background-color: rgba(255,255,255,0.5); }
 
-.booking-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 30px;
-}
+.booking-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 30px; }
 .booking-card {
     background: white; border-radius: 16px; overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);
@@ -261,7 +214,6 @@ button { font-family: inherit; }
 .meta-row { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-grey); margin-bottom: 6px; }
 .meta-row.secondary { font-size: 0.85rem; gap: 16px; }
 .rating { color: var(--accent-green); font-weight: 600; }
-
 .info-box {
     background-color: #F9FAFB; border-radius: 12px; padding: 16px;
     display: flex; justify-content: space-between; margin-bottom: 20px;
@@ -271,7 +223,6 @@ button { font-family: inherit; }
 .info-col .label { font-size: 0.8rem; color: #9CA3AF; }
 .info-col .value-dark { font-weight: 700; color: var(--text-dark); font-size: 0.95rem; }
 .info-col .value-cyan { font-weight: 700; color: var(--accent-cyan); font-size: 0.95rem; }
-
 .cost-row {
     display: flex; justify-content: space-between; align-items: flex-end;
     margin-bottom: 24px; padding: 10px 16px; border: 1px solid #F3F4F6; border-radius: 12px;
@@ -280,7 +231,6 @@ button { font-family: inherit; }
 .cost-col .label { font-size: 0.8rem; color: #9CA3AF; margin-bottom: 2px; }
 .cost-col .price { font-size: 1.25rem; font-weight: 800; color: var(--text-dark); }
 .points-col { color: #9CA3AF; font-size: 0.9rem; padding-bottom: 4px; }
-
 .btn-block {
     width: 100%; background-color: var(--accent-cyan); color: white;
     border: none; padding: 14px; border-radius: 10px; font-weight: 700;
@@ -288,11 +238,7 @@ button { font-family: inherit; }
 }
 .btn-block:hover { background-color: #0891b2; }
 
-
-/* =========================================
-   REWARDS PAGE Styles
-   ========================================= */
-
+/* --- REWARDS PAGE STYLES --- */
 .points-hero {
     background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%);
     border-radius: var(--radius-card); padding: 40px; color: white;
@@ -302,7 +248,6 @@ button { font-family: inherit; }
 .points-content { flex: 1; }
 .points-content .label { opacity: 0.9; font-size: 0.95rem; }
 .big-points { font-size: 4rem; font-weight: 700; line-height: 1.1; margin-bottom: 30px; }
-
 .progress-section { max-width: 600px; }
 .progress-labels { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9rem; font-weight: 500; }
 .progress-track { background: rgba(0,0,0,0.2); height: 8px; border-radius: 4px; overflow: hidden; }
@@ -310,9 +255,7 @@ button { font-family: inherit; }
 .tier-icon { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 50%; }
 .star-circle { font-size: 2.5rem; }
 
-.rewards-grid-new {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 30px;
-}
+.rewards-grid-new { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 30px; }
 .reward-card-new {
     background: var(--card-bg); border-radius: var(--radius-card);
     padding: 24px; box-shadow: var(--shadow-soft);
@@ -326,88 +269,33 @@ button { font-family: inherit; }
 }
 .reward-icon-box.blue { background: #e0f2fe; color: #0284c7; }
 .reward-icon-box.teal { background: #ccfbf1; color: #0f766e; }
-
 .reward-info { flex: 1; }
 .reward-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
 .reward-header h4 { font-size: 1.1rem; font-weight: 700; color: var(--text-dark); }
 .reward-info p { color: var(--text-grey); font-size: 0.9rem; }
-
 .tag { padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; white-space: nowrap; }
 .tag-blue { background: #e0f2fe; color: #0284c7; }
 .tag-teal { background: #ccfbf1; color: #0f766e; }
 .tag-green { background: #dcfce7; color: #15803d; }
-
 .reward-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
 .pts-cost { font-size: 1.25rem; font-weight: 700; color: var(--accent-cyan); }
 .btn-redeem { background: var(--accent-cyan); color: white; border: none; padding: 8px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; }
 .btn-redeem:hover { background: #0891b2; }
 
-.bonus-banner {
-    background: #14b8a6; color: white; padding: 20px;
-    border-radius: var(--radius-card); font-weight: 600;
-    display: flex; align-items: center; gap: 10px; font-size: 1.1rem;
-}
-
-/* Add this to the REWARDS PAGE Styles section */
-
-
+/* Bonus Panel */
 .bonus-panel {
-    background-color: #10b981; /* Vibrant Green/Teal */
-    color: white;
-    padding: 30px;
-    border-radius: var(--radius-card);
-    margin-top: 40px;
-    box-shadow: var(--shadow-soft);
+    background-color: #10b981; color: white; padding: 30px;
+    border-radius: var(--radius-card); margin-top: 40px; box-shadow: var(--shadow-soft);
 }
+.bonus-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.bonus-header h3 { font-size: 1.25rem; font-weight: 700; color: white; margin: 0; }
+.bonus-icon { font-size: 1.5rem; }
+.bonus-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.bonus-list li { font-size: 1rem; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+.bonus-list li .bullet { font-size: 1.2rem; line-height: 1.2; opacity: 0.8; }
+.bonus-list li strong { font-weight: 700; color: #ecfdf5; }
 
-.bonus-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-}
-
-.bonus-header h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: white;
-    margin: 0;
-}
-
-.bonus-icon {
-    font-size: 1.5rem;
-}
-
-.bonus-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.bonus-list li {
-    font-size: 1rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    line-height: 1.5;
-}
-
-.bonus-list li .bullet {
-    font-size: 1.2rem;
-    line-height: 1.2;
-    opacity: 0.8;
-}
-
-.bonus-list li strong {
-    font-weight: 700;
-    color: #ecfdf5; /* Very light green for contrast */
-}
-
-/* =========================================
-   IMPACT PAGE Styles
-   ========================================= */
-
+/* --- IMPACT PAGE STYLES --- */
 .impact-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 30px; }
 .impact-stat-card {
     background: var(--card-bg); padding: 24px; border-radius: var(--radius-card);
@@ -421,7 +309,6 @@ button { font-family: inherit; }
 .icon-square.green { background: #dcfce7; color: #16a34a; }
 .icon-square.teal { background: #ccfbf1; color: #0f766e; }
 .icon-square.blue { background: #e0f2fe; color: #0284c7; }
-
 .stat-content .stat-label { font-size: 0.9rem; color: var(--text-grey); display: block; margin-bottom: 4px; }
 .stat-content .stat-number { font-size: 2.5rem; font-weight: 700; color: var(--text-dark); line-height: 1; margin-bottom: 8px; }
 .stat-content .stat-number small { font-size: 1rem; font-weight: 500; color: var(--text-grey); margin-left: 4px; }
@@ -444,7 +331,6 @@ button { font-family: inherit; }
     border-radius: var(--radius-card); box-shadow: var(--shadow-soft); height: 100%;
 }
 .history-panel h3, .milestone-panel h3 { font-size: 1.1rem; margin-bottom: 20px; }
-
 .history-item {
     background: #f9fafb; padding: 16px; border-radius: 8px;
     display: flex; justify-content: space-between; align-items: center;
@@ -463,26 +349,31 @@ button { font-family: inherit; }
 .m-title { font-weight: 700; margin-bottom: 2px; }
 .m-desc { font-size: 0.85rem; opacity: 0.9; }
 
-
-/* =========================================
-   Responsive Design
-   ========================================= */
-
-@media (max-width: 1024px) {
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .dashboard-split { grid-template-columns: 1fr; }
-    .rewards-grid-new { grid-template-columns: 1fr; }
-    .bottom-impact-grid { grid-template-columns: 1fr; }
-    .booking-grid { grid-template-columns: 1fr; }
+/* Footer */
+.footer {
+    background-color: var(--header-bg);
+    color: #9ca3af;
+    padding: 60px 0 24px;
+    margin-top: auto;
 }
+.footer-container { max-width: 1400px; margin: 0 auto; padding: 0 30px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer-brand h3 { color: white; font-size: 1.5rem; margin-bottom: 16px; }
+.footer-col h4 { color: white; margin-bottom: 24px; font-size: 1rem; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a:hover { color: white; }
+.footer-bottom { text-align: center; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.875rem; }
 
+/* Responsive */
+@media (max-width: 1024px) {
+    .stats-grid, .rewards-grid-new, .bottom-impact-grid, .booking-grid { grid-template-columns: 1fr; }
+    .dashboard-split { grid-template-columns: 1fr; }
+}
 @media (max-width: 768px) {
-    .nav-links { display: none; /* In a real app, use a hamburger menu */ }
+    .nav-links { display: none; }
     .stats-grid { grid-template-columns: 1fr; }
+    .monthly-grid { grid-template-columns: 1fr; }
     .points-hero { flex-direction: column; text-align: center; gap: 20px; }
     .progress-section { width: 100%; }
-    .monthly-grid { grid-template-columns: 1fr; gap: 20px; }
-    .impact-stats-grid { grid-template-columns: 1fr; }
-    .filter-tabs { flex-wrap: wrap; border-radius: 16px; }
-    .filter-tab { flex: 1 1 45%; }
 }
