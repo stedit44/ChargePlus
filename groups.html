@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChargeReward - Groups & Leaderboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">⚡</div>
+            ChargeReward
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-item"><span>📊</span> Dashboard</a>
+            <a href="booking.html" class="nav-item"><span>📍</span> Book</a>
+            <a href="rewards.html" class="nav-item"><span>🎁</span> Rewards</a>
+            <a href="groups.html" class="nav-item active"><span>👥</span> Groups</a>
+            <a href="impact.html" class="nav-item"><span>🌱</span> Impact</a>
+            <div class="nav-profile">O</div>
+        </div>
+    </div>
+</nav>
+
+<div class="main-content">
+    <div class="page-heading">
+        <h1>Community Groups</h1>
+        <p>Join forces, compete in leaderboards, and book pods together.</p>
+    </div>
+
+    <div class="leaderboard-section">
+        <div class="leaderboard-controls">
+            <h3 class="section-subheading" style="margin-bottom: 0;">Top Chargers</h3>
+            
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <select class="station-select">
+                    <option>🌍 Global Ranking</option>
+                    <option>📍 Downtown Hub</option>
+                    <option>📍 Airport Terminal 2</option>
+                    <option>📍 Westside Mall</option>
+                </select>
+
+                <div class="leaderboard-toggle">
+                    <button class="lb-btn active">Individuals</button>
+                    <button class="lb-btn">Groups</button>
+                </div>
+            </div>
+        </div>
+
+        <table class="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>User / Group</th>
+                    <th>CO₂ Saved</th>
+                    <th>Total Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="rank-num rank-1">1</span></td>
+                    <td>
+                        <div class="user-cell">
+                            <div class="user-avatar" style="background:#fef3c7; color:#d97706;">JD</div>
+                            <span>Jane Doe</span>
+                        </div>
+                    </td>
+                    <td>1,240 kg</td>
+                    <td class="points-cell">15,400</td>
+                </tr>
+                <tr>
+                    <td><span class="rank-num rank-2">2</span></td>
+                    <td>
+                        <div class="user-cell">
+                            <div class="user-avatar" style="background:#f3f4f6; color:#4b5563;">TS</div>
+                            <span>Tesla Squad (Group)</span>
+                        </div>
+                    </td>
+                    <td>1,100 kg</td>
+                    <td class="points-cell">14,250</td>
+                </tr>
+                <tr>
+                    <td><span class="rank-num rank-3">3</span></td>
+                    <td>
+                        <div class="user-cell">
+                            <div class="user-avatar" style="background:#ffedd5; color:#c2410c;">MK</div>
+                            <span>Mike K.</span>
+                        </div>
+                    </td>
+                    <td>980 kg</td>
+                    <td class="points-cell">12,100</td>
+                </tr>
+                <tr style="background-color: #ecfeff;">
+                    <td><span class="rank-num">15</span></td>
+                    <td>
+                        <div class="user-cell">
+                            <div class="user-avatar" style="background:#06b6d4; color:white;">YO</div>
+                            <span>You (Oskar)</span>
+                        </div>
+                    </td>
+                    <td>892 kg</td>
+                    <td class="points-cell">2,847</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="section-subheading">Your Groups & Discover</h3>
+    <div class="groups-grid">
+        
+        <div class="group-card" style="border: 2px dashed #d1d5db; align-items: center; justify-content: center; background: transparent; box-shadow: none; min-height: 250px;">
+            <div style="font-size: 2rem; color: #9ca3af; margin-bottom: 10px;">+</div>
+            <h3 style="color: #6b7280;">Create New Group</h3>
+            <p style="text-align: center; font-size: 0.9rem; color: #9ca3af; margin-bottom: 20px;">Invite friends to charge together and compete.</p>
+            <button class="btn-block" style="width: auto; padding: 8px 24px;">Start Group</button>
+        </div>
+
+        <div class="group-card">
+            <div class="group-header">
+                <div class="group-icon">🚗</div>
+                <span class="tag tag-green">Member</span>
+            </div>
+            <div class="group-meta">
+                <h3>EV Weekend Travelers</h3>
+                <span>5 Members • Public Group</span>
+            </div>
+            
+            <div class="group-stats">
+                <div class="g-stat"><strong>45k</strong><small>Total Pts</small></div>
+                <div class="g-stat"><strong>2.1T</strong><small>CO₂ Saved</small></div>
+            </div>
+
+            <div class="avatar-stack">
+                <div class="stack-img bg-blue">AB</div>
+                <div class="stack-img bg-green">CD</div>
+                <div class="stack-img bg-purple">YO</div>
+                <div class="stack-img">+2</div>
+            </div>
+
+            <p style="font-size: 0.85rem; color: #6b7280; margin-bottom: 15px;">
+                "Planning a trip to the coast next Saturday. Let's book the Meeting Box!"
+            </p>
+
+            <div class="group-actions">
+                <button class="btn-block">Group Book</button>
+                <button class="btn-outline">Chat</button>
+            </div>
+        </div>
+
+        <div class="group-card">
+            <div class="group-header">
+                <div class="group-icon">💻</div>
+                <span class="tag tag-blue">Open to Join</span>
+            </div>
+            <div class="group-meta">
+                <h3>Remote Workers Hub</h3>
+                <span>12 Members • Downtown Area</span>
+            </div>
+            
+            <div class="group-stats">
+                <div class="g-stat"><strong>120k</strong><small>Total Pts</small></div>
+                <div class="g-stat"><strong>Rank #4</strong><small>Local</small></div>
+            </div>
+
+            <div class="avatar-stack">
+                <div class="stack-img bg-blue">JD</div>
+                <div class="stack-img bg-green">MK</div>
+                <div class="stack-img">+10</div>
+            </div>
+
+            <div class="group-actions">
+                <button class="btn-block">Join Group</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-bottom">
+            <p>&copy; 2024 ChargeReward Inc. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
