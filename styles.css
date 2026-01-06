@@ -19,9 +19,11 @@
     
     /* UI Variables */
     --nav-height: 70px;
-    --bottom-nav-height: 65px; /* Mobile */
+    --bottom-nav-height: 65px; 
     --radius-lg: 20px;
     --radius-md: 12px;
+    
+    /* Shadows */
     --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
     --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
     --shadow-float: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
@@ -38,10 +40,10 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-bottom: var(--bottom-nav-height); /* Space for mobile nav */
+    /* Removed padding-bottom here to fix PC layout */
 }
 
-a { text-decoration: none; color: inherit; transition: 0.2s; }
+a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
 button { font-family: inherit; cursor: pointer; }
 
 /* --- Desktop Navigation --- */
@@ -50,7 +52,7 @@ button { font-family: inherit; cursor: pointer; }
     height: var(--nav-height);
     display: flex; align-items: center;
     position: sticky; top: 0; z-index: 1000;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .nav-container {
@@ -61,48 +63,52 @@ button { font-family: inherit; cursor: pointer; }
 
 .logo {
     display: flex; align-items: center; gap: 10px;
-    color: var(--text-white); font-weight: 800; font-size: 1.3rem; letter-spacing: -0.5px;
+    color: var(--text-white); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px;
 }
 
 .logo-icon {
-    width: 32px; height: 32px;
+    width: 36px; height: 36px;
     background: var(--gradient-primary);
-    border-radius: 8px;
+    border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
-    color: white; font-size: 1.1rem;
+    color: white; font-size: 1.2rem;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
 }
 
 .nav-links { display: flex; gap: 8px; align-items: center; }
 
 .nav-item {
-    color: #94a3b8; font-size: 0.9rem; font-weight: 600;
+    color: #94a3b8; font-size: 0.95rem; font-weight: 600;
     display: flex; align-items: center; gap: 8px;
-    padding: 8px 16px; border-radius: 99px;
+    padding: 8px 18px; border-radius: 99px;
     transition: all 0.2s ease;
 }
 
-.nav-item:hover { color: white; background: rgba(255,255,255,0.05); }
+.nav-item:hover { color: white; background: rgba(255,255,255,0.1); }
 
 .nav-item.active {
-    background: rgba(255,255,255,0.1); color: var(--accent-cyan);
+    background: rgba(255,255,255,0.15); color: #38bdf8;
 }
 
 .nav-profile {
-    width: 38px; height: 38px;
+    width: 40px; height: 40px;
     border-radius: 50%;
     background: var(--gradient-primary);
     color: white;
     display: flex; align-items: center; justify-content: center;
-    font-weight: 700; margin-left: 10px;
+    font-weight: 700; margin-left: 15px;
+    border: 2px solid rgba(255,255,255,0.2);
+    cursor: pointer;
 }
+.nav-profile:hover { border-color: white; }
 
-/* --- Mobile Bottom Navigation --- */
+/* --- Mobile Bottom Navigation (Hidden on PC) --- */
 .mobile-nav {
-    display: none; /* Hidden on desktop */
+    display: none; 
     position: fixed; bottom: 0; left: 0; width: 100%;
     height: var(--bottom-nav-height);
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     border-top: 1px solid #e2e8f0;
     justify-content: space-around; align-items: center;
     z-index: 1000;
@@ -115,222 +121,242 @@ button { font-family: inherit; cursor: pointer; }
     width: 100%; height: 100%;
 }
 
-.mobile-nav-item span { font-size: 1.2rem; margin-bottom: 2px; }
+.mobile-nav-item span { font-size: 1.25rem; margin-bottom: 2px; }
 .mobile-nav-item.active { color: #0284c7; }
 
-/* --- Layout --- */
+/* --- Main Layout --- */
 .main-content {
     max-width: 1200px; margin: 0 auto;
-    padding: 30px 24px; width: 100%; flex: 1;
+    padding: 40px 24px; width: 100%; flex: 1;
 }
 
-/* --- Typography & Headers --- */
-.page-heading { margin-bottom: 30px; text-align: left; }
-.page-heading h1 { font-size: 2rem; font-weight: 800; color: var(--text-dark); letter-spacing: -1px; margin-bottom: 8px; }
-.page-heading p { color: var(--text-grey); font-size: 1rem; }
+/* --- Typography --- */
+.page-heading { margin-bottom: 40px; }
+.page-heading h1 { font-size: 2.5rem; font-weight: 800; color: var(--text-dark); letter-spacing: -1px; margin-bottom: 10px; }
+.page-heading p { color: var(--text-grey); font-size: 1.1rem; max-width: 600px; }
 
-.section-title { margin: 40px 0 20px; }
-.section-title h2 { font-size: 1.5rem; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
-.section-title p { color: var(--text-grey); font-size: 0.9rem; }
+.section-title { margin: 50px 0 25px; }
+.section-title h2 { font-size: 1.75rem; font-weight: 700; color: var(--text-dark); margin-bottom: 5px; }
+.section-title p { color: var(--text-grey); font-size: 1rem; }
 
-/* --- DASHBOARD CARDS --- */
-.stats-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px;
-}
-
+/* --- COMMON CARD STYLES --- */
 .stat-card, .group-card, .booking-card, .reward-card-new, .impact-stat-card {
     background: var(--card-bg);
     border-radius: var(--radius-lg);
     padding: 24px;
     box-shadow: var(--shadow-card);
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid rgba(0,0,0,0.03);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0,0,0,0.04);
+    position: relative;
+    overflow: hidden;
 }
 
-.stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-float); }
+/* Desktop Hover Effect: Lift up */
+.stat-card:hover, .group-card:hover, .booking-card:hover, .reward-card-new:hover { 
+    transform: translateY(-5px); 
+    box-shadow: var(--shadow-float); 
+}
+
+/* --- DASHBOARD --- */
+.welcome-header { margin-bottom: 30px; }
+.sub-label { color: var(--accent-cyan); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; margin-bottom: 5px; }
+.welcome-header h1 { font-size: 2.5rem; font-weight: 800; color: var(--text-dark); }
+
+/* Banner */
+.featured-banner {
+    background: url('images/station-aerial.jpg') center/cover; 
+    height: 240px; 
+    border-radius: 24px; 
+    margin-bottom: 40px; 
+    position: relative; 
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+.banner-overlay {
+    background: linear-gradient(to right, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 60%, transparent 100%);
+    width: 100%; height: 100%; display: flex; align-items: center; padding: 40px;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 40px;
+}
 
 .stat-icon-wrapper { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
 .stat-icon {
-    width: 44px; height: 44px;
+    width: 48px; height: 48px;
     background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
     color: var(--accent-cyan);
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
 }
-.trend-badge { color: var(--accent-green); font-size: 0.8rem; font-weight: 700; background: #ecfdf5; padding: 4px 8px; border-radius: 20px; }
+.trend-badge { color: var(--accent-green); font-size: 0.85rem; font-weight: 700; background: #ecfdf5; padding: 4px 10px; border-radius: 20px; }
+.stat-value { font-size: 2.25rem; font-weight: 800; color: var(--text-dark); line-height: 1; margin: 8px 0; letter-spacing: -1px; }
+.stat-label { font-size: 0.95rem; color: var(--text-grey); font-weight: 600; }
 
-.stat-value { font-size: 2.2rem; font-weight: 800; color: var(--text-dark); line-height: 1; margin: 5px 0; letter-spacing: -1px; }
-.stat-label { font-size: 0.9rem; color: var(--text-grey); font-weight: 600; }
+.dashboard-split { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 40px; }
 
-.dashboard-split { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 30px; }
-
-/* Sessions List */
+/* Sessions & Impact */
 .session-item {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 16px; background: #f8fafc; border-radius: 16px; margin-bottom: 12px;
+    padding: 16px 20px; background: #f8fafc; border-radius: 16px; margin-bottom: 12px;
+    border: 1px solid transparent; transition: 0.2s;
 }
-.session-icon {
-    width: 40px; height: 40px; background: #e0f2fe; color: #0284c7;
-    border-radius: 10px; display: flex; align-items: center; justify-content: center;
-}
+.session-item:hover { border-color: #e2e8f0; background: #f1f5f9; }
 
-/* Impact Box */
 .impact-box {
     background: var(--gradient-primary); color: white;
-    padding: 30px; border-radius: var(--radius-lg);
+    padding: 30px; border-radius: 24px;
     box-shadow: 0 20px 40px -10px rgba(6, 182, 212, 0.4);
 }
-.impact-row { border-color: rgba(255,255,255,0.2); }
-.impact-val { font-size: 2rem; }
+.impact-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 20px; }
+.impact-val { font-size: 2.2rem; font-weight: 700; }
 
 /* --- BOOKING FILTERS --- */
-.filter-container { margin-bottom: 30px; }
+.filter-container { margin-bottom: 40px; }
 .filter-tabs {
-    display: flex; gap: 8px;
-    overflow-x: auto; /* Scrollable on mobile */
-    padding-bottom: 5px; /* Space for scrollbar */
-    -ms-overflow-style: none; scrollbar-width: none;
+    display: flex; gap: 12px;
+    flex-wrap: wrap; /* Wrap on desktop */
 }
-.filter-tabs::-webkit-scrollbar { display: none; }
 
 .filter-tab {
-    padding: 10px 20px; border-radius: 50px;
+    padding: 12px 24px; border-radius: 50px;
     border: 1px solid #e2e8f0; background: white;
-    font-weight: 600; font-size: 0.9rem; color: var(--text-grey);
-    white-space: nowrap; flex-shrink: 0; /* Prevent squishing */
-    transition: 0.2s;
+    font-weight: 600; font-size: 0.95rem; color: var(--text-grey);
+    cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; gap: 8px;
 }
+
+.filter-tab:hover { background: #f8fafc; border-color: #cbd5e1; transform: translateY(-1px); }
 
 .filter-tab.active {
     background: var(--text-dark); color: white; border-color: var(--text-dark);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
 /* --- BOOKING CARDS --- */
-.booking-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
-.booking-card { padding: 0; border: none; overflow: hidden; }
-.card-image-wrapper { height: 200px; position: relative; }
-.card-img { width: 100%; height: 100%; object-fit: cover; }
+.booking-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 30px; }
+.booking-card { padding: 0; border: none; }
+.card-image-wrapper { height: 220px; position: relative; }
+.card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.booking-card:hover .card-img { transform: scale(1.05); }
+
 .badge-bonus {
-    position: absolute; top: 12px; right: 12px;
+    position: absolute; top: 16px; right: 16px;
     background: var(--gradient-gold); color: white;
-    padding: 6px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 800;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 800;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 2;
 }
-.card-body { padding: 20px; }
+.card-body { padding: 24px; }
+.card-meta { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+.meta-row { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-grey); }
+
+.info-box {
+    background-color: #f8fafc; border-radius: 12px; padding: 16px;
+    display: flex; justify-content: space-between; margin-bottom: 20px;
+    border: 1px solid #f1f5f9;
+}
+
 .btn-block {
     width: 100%; padding: 14px; border: none; border-radius: 12px;
     background: var(--gradient-primary); color: white;
     font-weight: 700; font-size: 1rem;
     box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
-    transition: 0.2s;
+    transition: all 0.2s; cursor: pointer;
 }
-.btn-block:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4); }
+.btn-block:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4); 
+    background: var(--gradient-hover);
+}
 
 /* --- REWARDS --- */
 .points-hero {
-    background: var(--gradient-primary); padding: 40px; border-radius: 24px;
-    color: white; margin-bottom: 40px;
+    background: var(--gradient-primary); padding: 50px; border-radius: 24px;
+    color: white; margin-bottom: 50px;
     box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.4);
-    position: relative; overflow: hidden;
+    display: flex; justify-content: space-between; align-items: center;
 }
-.big-points { font-size: 4.5rem; letter-spacing: -2px; }
-.rewards-grid-new { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
-.btn-redeem { background: #ecfeff; color: #0891b2; padding: 8px 20px; border-radius: 8px; font-weight: 700; border: none; }
+.big-points { font-size: 5rem; font-weight: 800; letter-spacing: -2px; line-height: 1; margin: 10px 0 30px; }
+.rewards-grid-new { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
+.reward-card-new { height: auto; min-height: 220px; }
+.reward-icon-box { width: 56px; height: 56px; font-size: 1.8rem; }
+.btn-redeem { 
+    background: #ecfeff; color: #0891b2; 
+    padding: 10px 24px; border-radius: 10px; font-weight: 700; border: none;
+    transition: 0.2s; cursor: pointer;
+}
+.btn-redeem:hover { background: #cffafe; color: #06b6d4; }
 
-/* --- GROUPS / LEADERBOARD --- */
-.leaderboard-table { border-radius: 12px; overflow: hidden; }
-.leaderboard-section { overflow-x: auto; } /* Scroll table horizontally */
-.groups-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+/* Bonus Panel */
+.bonus-panel {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%); 
+    color: white; padding: 40px;
+    border-radius: 24px; margin-top: 50px; 
+    box-shadow: 0 15px 30px -5px rgba(16, 185, 129, 0.3);
+}
+.bonus-list li { display: flex; gap: 12px; font-size: 1.1rem; margin-bottom: 12px; }
 
-/* --- LEADERBOARD STYLES --- */
-.leaderboard-section { margin-bottom: 50px; }
-.leaderboard-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 15px; }
-.leaderboard-toggle { display: inline-flex; background: #e5e7eb; padding: 4px; border-radius: 8px; }
-.lb-btn { padding: 8px 16px; border: none; background: transparent; border-radius: 6px; font-weight: 600; color: var(--text-grey); cursor: pointer; }
-.lb-btn.active { background: white; color: var(--text-dark); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-.station-select { padding: 8px 12px; border-radius: 8px; border: 1px solid #d1d5db; color: var(--text-dark); background: white; }
+/* --- GROUPS & LEADERBOARD --- */
+.leaderboard-section { background: white; border-radius: 16px; box-shadow: var(--shadow-sm); overflow: hidden; }
+.leaderboard-table { width: 100%; border-collapse: collapse; }
+.leaderboard-table th, .leaderboard-table td { padding: 18px 24px; text-align: left; border-bottom: 1px solid #f1f5f9; font-size: 1rem; }
+.groups-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+.group-header { display: flex; justify-content: space-between; margin-bottom: 20px; }
+.btn-outline { 
+    flex: 1; padding: 12px; border: 1px solid #cbd5e1; background: white; 
+    border-radius: 12px; font-weight: 600; cursor: pointer; transition: 0.2s; 
+}
+.btn-outline:hover { background: #f1f5f9; border-color: #94a3b8; }
 
-.leaderboard-table { width: 100%; background: white; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-soft); border-collapse: collapse; }
-.leaderboard-table th { text-align: left; padding: 16px 24px; background: #f9fafb; color: var(--text-grey); font-size: 0.85rem; font-weight: 600; }
-.leaderboard-table td { padding: 16px 24px; border-bottom: 1px solid #f3f4f6; color: var(--text-dark); vertical-align: middle; }
-.leaderboard-table tr:last-child td { border-bottom: none; }
-.rank-num { font-weight: 700; color: var(--text-grey); width: 40px; display: inline-block; text-align: center; }
-.rank-1 { color: #d97706; font-size: 1.2rem; } /* Gold */
-.rank-2 { color: #9ca3af; font-size: 1.1rem; } /* Silver */
-.rank-3 { color: #b45309; font-size: 1.1rem; } /* Bronze */
-
-.user-cell { display: flex; align-items: center; gap: 12px; }
-.user-avatar { width: 36px; height: 36px; background: #e0f2fe; color: #0284c7; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; }
-.points-cell { font-weight: 700; color: var(--accent-cyan); }
-
-/* --- GROUPS STYLES --- */
-.groups-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 24px; }
-.group-card { background: white; border-radius: 16px; padding: 24px; box-shadow: var(--shadow-soft); display: flex; flex-direction: column; height: 100%; }
-.group-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
-.group-icon { width: 50px; height: 50px; background: #f0fdf4; color: #16a34a; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
-.group-meta h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
-.group-meta span { font-size: 0.85rem; color: var(--text-grey); }
-.group-stats { display: flex; gap: 15px; margin-bottom: 20px; background: #f9fafb; padding: 12px; border-radius: 8px; }
-.g-stat { display: flex; flex-direction: column; }
-.g-stat strong { font-size: 1rem; color: var(--text-dark); }
-.g-stat small { font-size: 0.75rem; color: var(--text-grey); }
-
-.avatar-stack { display: flex; margin-bottom: 20px; }
-.stack-img { width: 32px; height: 32px; border-radius: 50%; border: 2px solid white; margin-left: -10px; background: #ccc; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: white; font-weight: 600; }
-.stack-img:first-child { margin-left: 0; }
-.bg-blue { background: #3b82f6; }
-.bg-green { background: #10b981; }
-.bg-purple { background: #8b5cf6; }
-
-.group-actions { margin-top: auto; display: flex; gap: 10px; }
-.btn-outline { flex: 1; padding: 10px; border: 1px solid #d1d5db; background: white; border-radius: 8px; font-weight: 600; cursor: pointer; text-align: center; }
-.btn-outline:hover { background: #f9fafb; }
-
-/* --- MATERIALS / SPECS SECTION (Booking Page) --- */
-.materials-section { background: white; border-radius: 16px; padding: 30px; margin-bottom: 40px; box-shadow: var(--shadow-soft); }
-.materials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 24px; }
-.mat-item { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
-.mat-icon { width: 40px; height: 40px; background: #ecfeff; color: var(--accent-cyan); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
-.mat-item h4 { font-weight: 700; font-size: 1rem; }
-.mat-item p { font-size: 0.9rem; color: var(--text-grey); line-height: 1.4; }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .leaderboard-controls { flex-direction: column; align-items: flex-start; }
-    .leaderboard-table th:nth-child(3), .leaderboard-table td:nth-child(3) { display: none; } /* Hide Impact on mobile */
+/* --- FOOTER --- */
+.footer { 
+    background-color: var(--header-bg); color: #94a3b8; 
+    padding: 60px 0 30px; margin-top: auto; text-align: center; font-size: 0.95rem; 
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
+/* =========================================
+   MOBILE RESPONSIVENESS (Phone Only)
+   ========================================= */
 @media (max-width: 768px) {
-    /* Layout */
+    /* Enable Bottom Padding for Nav */
+    body { padding-bottom: var(--bottom-nav-height); }
+    
     .main-content { padding: 20px 16px; }
     
-    /* Navigation */
-    .nav-links { display: none; } /* Hide top nav links */
-    .mobile-nav { display: flex; } /* Show bottom nav */
-    .nav-profile { display: none; } /* Move profile to settings page eventually */
-    .navbar { justify-content: center; } /* Center logo on mobile */
-
-    /* Typography */
-    .page-heading h1 { font-size: 1.75rem; }
+    /* Navigation Switch */
+    .nav-links { display: none; }
+    .mobile-nav { display: flex; }
+    .nav-profile { display: none; }
+    .navbar { justify-content: center; height: 60px; } 
+    
+    /* Typography Scaling */
+    .page-heading h1 { font-size: 1.8rem; }
     .welcome-header h1 { font-size: 2rem; }
     .stat-value { font-size: 2rem; }
-
-    /* Grids to Single Column */
-    .stats-grid, .booking-grid, .rewards-grid-new, .groups-grid, .dashboard-split, .impact-stats-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Adjustments */
-    .points-hero { padding: 24px; text-align: center; }
     .big-points { font-size: 3.5rem; }
+    
+    /* Layouts to Single Column */
+    .stats-grid, .booking-grid, .rewards-grid-new, .groups-grid, 
+    .dashboard-split, .impact-stats-grid, .monthly-grid, .bottom-impact-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    /* Filter Tabs Scroll */
+    .filter-tabs { 
+        flex-wrap: nowrap; overflow-x: auto; 
+        padding-bottom: 10px; /* room for scrollbar if any */
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Adjust Cards */
+    .points-hero { flex-direction: column; text-align: center; gap: 20px; padding: 24px; }
     .progress-section { width: 100%; }
-    .tier-icon { display: none; } /* Simplify for mobile */
+    .tier-icon { display: none; }
     
-    /* Tables */
-    .leaderboard-table th, .leaderboard-table td { padding: 12px; font-size: 0.9rem; }
+    .leaderboard-table th, .leaderboard-table td { padding: 12px; font-size: 0.85rem; }
     
-    /* Buttons */
     .btn-block { padding: 16px; }
+    .featured-banner { height: 180px; }
 }
