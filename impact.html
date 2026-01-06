@@ -11,7 +11,10 @@
 
 <nav class="navbar">
     <div class="nav-container">
-        <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span>ChargeReward</span></a>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">⚡</div>
+            <span>ChargeReward</span>
+        </a>
         <div class="nav-links">
             <a href="index.html" class="nav-item">Dashboard</a>
             <a href="booking.html" class="nav-item">Book</a>
@@ -32,30 +35,117 @@
 
 <div class="main-content">
     <div class="page-heading">
-        <h1>Impact</h1>
-        <p>Your positive change.</p>
+        <h1>Environmental Impact</h1>
+        <p>See the positive change you're making.</p>
     </div>
 
     <div class="impact-stats-grid">
         <div class="impact-stat-card">
             <div class="icon-square green">🍃</div>
-            <div><span class="stat-label">CO₂ Saved</span><div class="stat-value" style="font-size:1.8rem;">892kg</div></div>
+            <div>
+                <span class="stat-label">CO₂ Saved</span>
+                <div class="stat-value">892 <small style="font-size: 1rem; color: #94a3b8;">kg</small></div>
+                <p style="font-size: 0.85rem; color: #64748b; margin-top: 5px;">Eq. to flight NY ➔ LA</p>
+            </div>
         </div>
+
         <div class="impact-stat-card">
             <div class="icon-square teal">🌳</div>
-            <div><span class="stat-label">Trees</span><div class="stat-value" style="font-size:1.8rem;">39</div></div>
+            <div>
+                <span class="stat-label">Trees Saved</span>
+                <div class="stat-value">39</div>
+                <p style="font-size: 0.85rem; color: #64748b; margin-top: 5px;">Based on absorption</p>
+            </div>
+        </div>
+
+        <div class="impact-stat-card">
+            <div class="icon-square blue">💧</div>
+            <div>
+                <span class="stat-label">Fuel Saved</span>
+                <div class="stat-value">127 <small style="font-size: 1rem; color: #94a3b8;">gal</small></div>
+                <p style="font-size: 0.85rem; color: #64748b; margin-top: 5px;">Vs. gas vehicles</p>
+            </div>
+        </div>
+
+        <div class="impact-stat-card">
+            <div class="icon-square green">📈</div>
+            <div>
+                <span class="stat-label">Money Saved</span>
+                <div class="stat-value">$487</div>
+                <p style="font-size: 0.85rem; color: #64748b; margin-top: 5px;">Fuel & maintenance</p>
+            </div>
         </div>
     </div>
 
     <div class="monthly-impact-hero">
-        <h3>Monthly Stats</h3>
+        <h3 style="margin: 0 0 20px 0; font-size: 1.2rem;">Your Monthly Impact</h3>
         <div class="monthly-grid">
-            <div><span class="impact-label">Energy</span><div class="impact-val">1.2 MWh</div></div>
-            <div><span class="impact-label">Sessions</span><div class="impact-val">23</div></div>
+            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 12px;">
+                <span class="impact-label">Energy</span>
+                <div class="impact-val">1.2 MWh</div>
+                <div style="font-size: 0.8rem; opacity: 0.8;">+8% vs last month</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 12px;">
+                <span class="impact-label">Sessions</span>
+                <div class="impact-val">23</div>
+                <div style="font-size: 0.8rem; opacity: 0.8;">Active charging</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 12px;">
+                <span class="impact-label">Stations</span>
+                <div class="impact-val">12</div>
+                <div style="font-size: 0.8rem; opacity: 0.8;">+3 new visited</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-impact-grid">
+        <div class="stat-card">
+            <h3 style="margin-bottom: 20px; font-size: 1.1rem; font-weight: 700;">History</h3>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: #f8fafc; border-radius: 8px;">
+                    <span style="font-weight: 600;">December 2024</span>
+                    <div style="text-align: right;">
+                        <div style="font-weight: 700; color: var(--text-dark);">1,234 kWh</div>
+                        <div style="font-size: 0.8rem; color: #10b981;">892 kg saved</div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: #f8fafc; border-radius: 8px;">
+                    <span style="font-weight: 600;">November 2024</span>
+                    <div style="text-align: right;">
+                        <div style="font-weight: 700; color: var(--text-dark);">1,100 kWh</div>
+                        <div style="font-size: 0.8rem; color: #10b981;">750 kg saved</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stat-card" style="background: #ecfdf5; border: 1px solid #d1fae5;">
+            <h3 style="margin-bottom: 20px; font-size: 1.1rem; font-weight: 700; color: #065f46;">Milestones</h3>
+            <div style="display: flex; gap: 15px; align-items: flex-start;">
+                <div style="width: 32px; height: 32px; background: #10b981; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">✓</div>
+                <div>
+                    <div style="font-weight: 700; color: #065f46;">Carbon Neutral Month</div>
+                    <div style="font-size: 0.9rem; color: #047857;">Achieved in November 2024</div>
+                </div>
+            </div>
+            <div style="margin-top: 20px; display: flex; gap: 15px; align-items: flex-start; opacity: 0.6;">
+                <div style="width: 32px; height: 32px; border: 2px dashed #10b981; color: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;"></div>
+                <div>
+                    <div style="font-weight: 700; color: #065f46;">1 Tonne CO₂ Club</div>
+                    <div style="font-size: 0.9rem; color: #047857;">108 kg to go</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<footer class="footer"><div class="footer-container"><p>&copy; 2025 ChargeReward Inc.</p></div></footer>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-bottom">
+            <p>&copy; 2025 ChargeReward Inc. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
