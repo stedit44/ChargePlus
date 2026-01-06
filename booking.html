@@ -37,6 +37,7 @@
             <button class="filter-tab active" data-category="charging"><span class="icon">⚡</span> Charging</button>
             <button class="filter-tab" data-category="office"><span class="icon">💼</span> Office Box</button>
             <button class="filter-tab" data-category="playground"><span class="icon">⚽</span> Play Box</button>
+            <button class="filter-tab" data-category="group_bundles"><span class="icon">👥</span> Group Bundles</button>
             <button class="filter-tab" data-category="retail"><span class="icon">🛒</span> Retail Box</button>
         </div>
     </div>
@@ -68,6 +69,7 @@
             </div>
         </div>
     </div>
+
     <div class="section-title">
         <h2 id="section-heading">Charging Stations</h2>
         <p id="section-subheading">Fast charging - Pay with euros or reward points</p>
@@ -86,30 +88,179 @@
 </footer>
 
 <script>
-    /* ... (Keep your existing Javascript for the booking grid here) ... */
+    // --- Data Source with UNIQUE Image Paths ---
     const placesData = {
         charging: [
-            { title: "Downtown Hub", img: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=800&q=80", address: "Central Plaza, Zone A", distance: "0.3 mi", rating: "4.8", label1: "Availability", val1: "3 of 8 spots", label2: "Speed", val2: "⚡ 150 kW", price: "€0.35/kWh", points: "Earn 1x", btnText: "Start Charging", bonus: null },
-            { title: "Airport Fast Charge", img: "https://images.unsplash.com/photo-1646700547076-78b17b6a127a?auto=format&fit=crop&w=800&q=80", address: "Terminal 2 Parking", distance: "2.1 mi", rating: "4.9", label1: "Availability", val1: "5 of 12 spots", label2: "Speed", val2: "⚡ 250 kW", price: "€0.45/kWh", points: "Earn 2x", btnText: "Start Charging", bonus: "+50 Pts" },
-            { title: "Westside Mall Station", img: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80", address: "Shopping District", distance: "4.5 mi", rating: "4.7", label1: "Availability", val1: "2 of 6 spots", label2: "Speed", val2: "⚡ 150 kW", price: "€0.30/kWh", points: "Earn 1x", btnText: "Start Charging", bonus: null },
-            { title: "Highway 66 Superstop", img: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=800&q=80", address: "Exit 42 Rest Area", distance: "12.0 mi", rating: "4.5", label1: "Availability", val1: "8 of 10 spots", label2: "Speed", val2: "⚡ 350 kW", price: "€0.40/kWh", points: "Earn 1.5x", btnText: "Start Charging", bonus: null }
+            { 
+                title: "Downtown Hub", 
+                img: "images/city1.png", // Maps to Downtown
+                address: "Central Plaza, Zone A", 
+                distance: "0.3 mi", rating: "4.8", 
+                label1: "Availability", val1: "3 of 8 spots", 
+                label2: "Speed", val2: "⚡ 150 kW", 
+                price: "€0.35/kWh", points: "Earn 1x", btnText: "Start Charging", bonus: null 
+            },
+            { 
+                title: "Airport Fast Charge", 
+                img: "images/airport.jpg", // Maps to Airport
+                address: "Terminal 2 Parking", 
+                distance: "2.1 mi", rating: "4.9", 
+                label1: "Availability", val1: "5 of 12 spots", 
+                label2: "Speed", val2: "⚡ 250 kW", 
+                price: "€0.45/kWh", points: "Earn 2x", btnText: "Start Charging", bonus: "+50 Pts" 
+            },
+            { 
+                title: "Westside Mall Station", 
+                img: "images/side_of_town.jpg", // Maps to specific town side
+                address: "Shopping District", 
+                distance: "4.5 mi", rating: "4.7", 
+                label1: "Availability", val1: "2 of 6 spots", 
+                label2: "Speed", val2: "⚡ 150 kW", 
+                price: "€0.30/kWh", points: "Earn 1x", btnText: "Start Charging", bonus: null 
+            },
+            { 
+                title: "Highway 66 Superstop", 
+                img: "images/highway.jpg", // Maps to Highway
+                address: "Exit 42 Rest Area", 
+                distance: "12.0 mi", rating: "4.5", 
+                label1: "Availability", val1: "8 of 10 spots", 
+                label2: "Speed", val2: "⚡ 350 kW", 
+                price: "€0.40/kWh", points: "Earn 1.5x", btnText: "Start Charging", bonus: null 
+            }
         ],
         office: [
-            { title: "Office Pod: Plaza", img: "https://i.imgur.com/8Q5gY7s.jpeg", address: "Central Plaza Hub", distance: "0.1 mi", rating: "4.9", label1: "Type", val1: "Focus Pod (1P)", label2: "Amenities", val2: "📶 WiFi, AC", price: "€12/hr", points: "350 pts", btnText: "Unlock Pod", bonus: "Quiet Zone" },
-            { title: "Meeting Box: Tech Park", img: "https://i.imgur.com/0y5d8fK.jpeg", address: "Innovation District", distance: "1.5 mi", rating: "4.8", label1: "Type", val1: "Meeting (4P)", label2: "Amenities", val2: "📺 Screen, Coffee", price: "€25/hr", points: "750 pts", btnText: "Unlock Box", bonus: null },
-            { title: "Office Pod: Station", img: "https://i.imgur.com/8Q5gY7s.jpeg", address: "Central Train Station", distance: "0.8 mi", rating: "4.7", label1: "Type", val1: "Focus Pod (1P)", label2: "Amenities", val2: "📶 5G, Printer", price: "€15/hr", points: "400 pts", btnText: "Unlock Pod", bonus: null },
-            { title: "Office Pod: Hotel", img: "https://i.imgur.com/8Q5gY7s.jpeg", address: "Grand Hotel Forecourt", distance: "3.2 mi", rating: "4.9", label1: "Type", val1: "Focus Pod (1P)", label2: "Amenities", val2: "Soundproof", price: "€14/hr", points: "350 pts", btnText: "Unlock Pod", bonus: null }
+            { 
+                title: "Office Pod: Plaza", 
+                img: "images/office1.jpg", 
+                address: "Central Plaza Hub", 
+                distance: "0.1 mi", rating: "4.9", 
+                label1: "Type", val1: "Focus Pod (1P)", 
+                label2: "Amenities", val2: "📶 WiFi, AC", 
+                price: "€12/hr", points: "350 pts", btnText: "Unlock Pod", bonus: "Quiet Zone" 
+            },
+            { 
+                title: "Meeting Box: Tech Park", 
+                img: "images/meeting.jpg", 
+                address: "Innovation District", 
+                distance: "1.5 mi", rating: "4.8", 
+                label1: "Type", val1: "Meeting (4P)", 
+                label2: "Amenities", val2: "📺 Screen, Coffee", 
+                price: "€25/hr", points: "750 pts", btnText: "Unlock Box", bonus: null 
+            },
+            { 
+                title: "Office Pod: Station", 
+                img: "images/office2_station.jpg", 
+                address: "Central Train Station", 
+                distance: "0.8 mi", rating: "4.7", 
+                label1: "Type", val1: "Focus Pod (1P)", 
+                label2: "Amenities", val2: "📶 5G, Printer", 
+                price: "€15/hr", points: "400 pts", btnText: "Unlock Pod", bonus: null 
+            },
+            { 
+                title: "Office Pod: Hotel", 
+                img: "images/office3_hotel.jpg", 
+                address: "Grand Hotel Forecourt", 
+                distance: "3.2 mi", rating: "4.9", 
+                label1: "Type", val1: "Focus Pod (1P)", 
+                label2: "Amenities", val2: "Soundproof", 
+                price: "€14/hr", points: "350 pts", btnText: "Unlock Pod", bonus: null 
+            }
         ],
         playground: [
-            { title: "Play Box: City Park", img: "https://i.imgur.com/a1b2c3d.jpeg", address: "Main Park Entrance", distance: "0.2 mi", rating: "4.9", label1: "Ages", val1: "3 - 8 Years", label2: "Features", val2: "Slides, Ball Pit", price: "€10/hr", points: "300 pts", btnText: "Book Slot", bonus: "Sanitized" },
-            { title: "Play Box: Mall", img: "https://i.imgur.com/a1b2c3d.jpeg", address: "Westside Mall Court", distance: "4.5 mi", rating: "4.8", label1: "Ages", val1: "2 - 6 Years", label2: "Features", val2: "Soft Play", price: "€8/hr", points: "250 pts", btnText: "Book Slot", bonus: null },
-            { title: "Play Box: Beach", img: "https://i.imgur.com/a1b2c3d.jpeg", address: "Ocean Promenade", distance: "8.0 mi", rating: "4.9", label1: "Ages", val1: "4 - 10 Years", label2: "Features", val2: "Climbing Wall", price: "€12/hr", points: "350 pts", btnText: "Book Slot", bonus: "Sea View" }
+            { 
+                title: "Play Box: City Park", 
+                img: "images/playground_citypark.jpg", 
+                address: "Main Park Entrance", 
+                distance: "0.2 mi", rating: "4.9", 
+                label1: "Ages", val1: "3 - 8 Years", 
+                label2: "Features", val2: "Slides, Ball Pit", 
+                price: "€10/hr", points: "300 pts", btnText: "Book Slot", bonus: "Sanitized" 
+            },
+            { 
+                title: "Play Box: Mall", 
+                img: "images/playground_mall.jpg", 
+                address: "Westside Mall Court", 
+                distance: "4.5 mi", rating: "4.8", 
+                label1: "Ages", val1: "2 - 6 Years", 
+                label2: "Features", val2: "Soft Play", 
+                price: "€8/hr", points: "250 pts", btnText: "Book Slot", bonus: null 
+            },
+            { 
+                title: "Play Box: Beach", 
+                img: "images/playground_beach.jpg", 
+                address: "Ocean Promenade", 
+                distance: "8.0 mi", rating: "4.9", 
+                label1: "Ages", val1: "4 - 10 Years", 
+                label2: "Features", val2: "Climbing Wall", 
+                price: "€12/hr", points: "350 pts", btnText: "Book Slot", bonus: "Sea View" 
+            }
+        ],
+        group_bundles: [
+            { 
+                title: "Startup Team Sprint", 
+                img: "images/meeting.jpg", 
+                address: "Innovation District", 
+                distance: "1.5 mi", rating: "5.0", 
+                label1: "Includes", val1: "4 Office Pods + Coffee", 
+                label2: "Savings", val2: "🔥 20% Off", 
+                price: "€45/hr", points: "2000 pts", btnText: "Book for Group", bonus: "Group Rate" 
+            },
+            { 
+                title: "Kids Party Package", 
+                img: "images/playground_mall.jpg", 
+                address: "Westside Mall", 
+                distance: "4.5 mi", rating: "4.8", 
+                label1: "Includes", val1: "3 Play Boxes + Lounge", 
+                label2: "Savings", val2: "🔥 15% Off", 
+                price: "€35/hr", points: "1500 pts", btnText: "Book for Group", bonus: "Party Pack" 
+            },
+            { 
+                title: "Developers Hackathon", 
+                img: "images/office1.jpg", 
+                address: "Central Train Station", 
+                distance: "0.8 mi", rating: "4.9", 
+                label1: "Includes", val1: "6 Focus Pods", 
+                label2: "Savings", val2: "🔥 25% Off", 
+                price: "€60/hr", points: "3000 pts", btnText: "Book for Group", bonus: "Fast WiFi" 
+            }
         ],
         retail: [
-            { title: "Smart Market Box", img: "https://images.unsplash.com/photo-1601599561213-832382fd07ba?auto=format&fit=crop&w=800&q=80", address: "Metro Station Exit", distance: "0.1 mi", rating: "4.5", label1: "Type", val1: "Fresh Food", label2: "Status", val2: "Open 24/7", price: "Shop", points: "Earn Points", btnText: "Open Door", bonus: "Restocked" },
-            { title: "Tech Vending Box", img: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80", address: "Airport Departure", distance: "2.1 mi", rating: "4.8", label1: "Type", val1: "Electronics", label2: "Status", val2: "Open 24/7", price: "Shop", points: "Earn Points", btnText: "View Items", bonus: null },
-            { title: "Coffee Bot", img: "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=800&q=80", address: "Business District", distance: "0.5 mi", rating: "4.7", label1: "Type", val1: "Auto-Barista", label2: "Menu", val2: "Hot/Cold Brew", price: "Order", points: "Double Pts", btnText: "Order Now", bonus: "No Queue" },
-            { title: "Snack Station", img: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80", address: "Highway Rest Stop", distance: "12.0 mi", rating: "4.4", label1: "Type", val1: "Drinks/Snacks", label2: "Status", val2: "Open 24/7", price: "Shop", points: "Earn Points", btnText: "Open Door", bonus: null }
+            { 
+                title: "Smart Market Box", 
+                img: "images/retail_smartmarket.jpg", 
+                address: "Metro Station Exit", 
+                distance: "0.1 mi", rating: "4.5", 
+                label1: "Type", val1: "Fresh Food", 
+                label2: "Status", val2: "Open 24/7", 
+                price: "Shop", points: "Earn Points", btnText: "Open Door", bonus: "Restocked" 
+            },
+            { 
+                title: "Tech Vending Box", 
+                img: "images/retail_techairport.jpg", 
+                address: "Airport Departure", 
+                distance: "2.1 mi", rating: "4.8", 
+                label1: "Type", val1: "Electronics", 
+                label2: "Status", val2: "Open 24/7", 
+                price: "Shop", points: "Earn Points", btnText: "View Items", bonus: null 
+            },
+            { 
+                title: "Coffee Bot", 
+                img: "images/retail_coffeebusiness.jpg", 
+                address: "Business District", 
+                distance: "0.5 mi", rating: "4.7", 
+                label1: "Type", val1: "Auto-Barista", 
+                label2: "Menu", val2: "Hot/Cold Brew", 
+                price: "Order", points: "Double Pts", btnText: "Order Now", bonus: "No Queue" 
+            },
+            { 
+                title: "Snack Station", 
+                img: "images/retail_snackshighway.jpg", 
+                address: "Highway Rest Stop", 
+                distance: "12.0 mi", rating: "4.4", 
+                label1: "Type", val1: "Drinks/Snacks", 
+                label2: "Status", val2: "Open 24/7", 
+                price: "Shop", points: "Earn Points", btnText: "Open Door", bonus: null 
+            }
         ]
     };
 
@@ -117,6 +268,7 @@
         charging: { h2: "Charging Stations", p: "High-speed chargers available across the city" },
         office: { h2: "Work Pods", p: "Soundproof, private spaces for calls and focus work" },
         playground: { h2: "Play Boxes", p: "Safe, enclosed play areas for children" },
+        group_bundles: { h2: "Group Bundles", p: "Book multiple pods together for teams and events" },
         retail: { h2: "Automated Retail", p: "24/7 smart vending for food, tech, and coffee" }
     };
 
