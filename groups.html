@@ -2,229 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChargeReward - Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ChargeReward - Groups</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <nav class="navbar">
     <div class="nav-container">
-        <a href="index.html" class="logo">
-            <div class="logo-icon">⚡</div>
-            ChargeReward
-        </a>
+        <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span>ChargeReward</span></a>
         <div class="nav-links">
-            <a href="index.html" class="nav-item"><span>📊</span> Dashboard</a>
-            <a href="booking.html" class="nav-item active"><span>📍</span> Book</a>
-            <a href="rewards.html" class="nav-item"><span>🎁</span> Rewards</a>
-            <a href="groups.html" class="nav-item"><span>👥</span> Groups</a>
-            <a href="impact.html" class="nav-item"><span>🌱</span> Impact</a>
+            <a href="index.html" class="nav-item">Dashboard</a>
+            <a href="booking.html" class="nav-item">Book</a>
+            <a href="rewards.html" class="nav-item">Rewards</a>
+            <a href="groups.html" class="nav-item active">Groups</a>
+            <a href="impact.html" class="nav-item">Impact</a>
             <div class="nav-profile">O</div>
         </div>
     </div>
 </nav>
 
-<div class="main-content">
-    <div class="page-heading">
-        <h1>Book Your Experience</h1>
-        <p>Locate our network of charging stations and modular activity pods nearby.</p>
-    </div>
-
-    <div class="filter-container">
-        <div class="filter-tabs" id="category-filters">
-            <button class="filter-tab active" data-category="charging"><span class="icon">⚡</span> Charging</button>
-            <button class="filter-tab" data-category="office"><span class="icon">💼</span> Office Box</button>
-            <button class="filter-tab" data-category="playground"><span class="icon">⚽</span> Play Box</button>
-            <button class="filter-tab" data-category="group_bundles"><span class="icon">👥</span> Group Bundles</button> <button class="filter-tab" data-category="retail"><span class="icon">🛒</span> Retail Box</button>
-        </div>
-    </div>
-
-    <div class="materials-section">
-        <h3 class="section-subheading" style="margin-bottom: 10px;">Pod Comfort & Standards</h3>
-        <p style="color: var(--text-grey);">Designed for rest, work, and play. Our pods use premium, sustainable materials.</p>
-        
-        <div class="materials-grid">
-            <div class="mat-item">
-                <div class="mat-icon">🔇</div>
-                <h4>Acoustic Silence</h4>
-                <p>Walls lined with <strong>recycled acoustic felt</strong> and double-glazed glass.</p>
-            </div>
-            <div class="mat-item">
-                <div class="mat-icon">🌿</div>
-                <h4>Sustainable Build</h4>
-                <p>Structures made from <strong>CLT (Cross Laminated Timber)</strong> and recycled aluminum.</p>
-            </div>
-            <div class="mat-item">
-                <div class="mat-icon">🛋️</div>
-                <h4>Ergonomics</h4>
-                <p>Lounge seating uses <strong>memory foam</strong> upholstered in breathable bamboo fabric.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="section-title">
-        <h2 id="section-heading">Charging Stations</h2>
-        <p id="section-subheading">Fast charging - Pay with euros or reward points</p>
-    </div>
-
-    <div class="booking-grid" id="booking-grid-container">
-        </div>
+<div class="mobile-nav">
+    <a href="index.html" class="mobile-nav-item"><span>📊</span> Dashboard</a>
+    <a href="booking.html" class="mobile-nav-item"><span>📍</span> Book</a>
+    <a href="rewards.html" class="mobile-nav-item"><span>🎁</span> Rewards</a>
+    <a href="groups.html" class="mobile-nav-item active"><span>👥</span> Groups</a>
 </div>
 
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-bottom">
-            <p>&copy; 2024 ChargeReward Inc. All rights reserved.</p>
+<div class="main-content">
+    <div class="page-heading">
+        <h1>Community</h1>
+        <p>Compete and group book.</p>
+    </div>
+
+    <div class="leaderboard-section">
+        <div style="padding: 20px; border-bottom: 1px solid #f1f5f9;">
+            <h3 style="margin:0; font-size:1.1rem;">Top Chargers</h3>
+        </div>
+        <table class="leaderboard-table">
+            <tr style="background:#fffbeb;">
+                <td><span style="color:#d97706; font-weight:700;">#1</span></td>
+                <td><div style="display:flex; align-items:center; gap:10px;"><div style="width:30px; height:30px; background:#fcd34d; border-radius:50%;"></div>Jane</div></td>
+                <td style="font-weight:700;">15,400</td>
+            </tr>
+            <tr>
+                <td><span style="color:#9ca3af; font-weight:700;">#2</span></td>
+                <td><div style="display:flex; align-items:center; gap:10px;"><div style="width:30px; height:30px; background:#e5e7eb; border-radius:50%;"></div>Tesla Grp</div></td>
+                <td style="font-weight:700;">14,200</td>
+            </tr>
+            <tr style="background:#ecfeff;">
+                <td><span style="color:#06b6d4; font-weight:700;">#15</span></td>
+                <td><div style="display:flex; align-items:center; gap:10px;"><div style="width:30px; height:30px; background:#06b6d4; border-radius:50%;"></div>You</div></td>
+                <td style="font-weight:700; color:#06b6d4;">2,847</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3 class="section-title">Your Groups</h3>
+    <div class="groups-grid">
+        <div class="group-card">
+            <div class="group-header">
+                <div class="group-icon">🚗</div>
+                <span class="tag tag-green">Member</span>
+            </div>
+            <div style="margin-bottom:15px;">
+                <h3 style="margin:0;">EV Travelers</h3>
+                <span style="font-size:0.8rem; color:#64748b;">5 Members</span>
+            </div>
+            <div class="avatar-stack">
+                <div class="stack-img bg-blue">A</div>
+                <div class="stack-img bg-green">B</div>
+                <div class="stack-img">+3</div>
+            </div>
+            <div style="display:flex; gap:10px;">
+                <button class="btn-block" style="font-size:0.9rem; padding:10px;">Book</button>
+                <button class="btn-outline">Chat</button>
+            </div>
         </div>
     </div>
-</footer>
+</div>
 
-<script>
-    const placesData = {
-        charging: [
-            { title: "Downtown Hub", img: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=800&q=80", address: "Central Plaza, Zone A", distance: "0.3 mi", rating: "4.8", label1: "Availability", val1: "3 of 8 spots", label2: "Speed", val2: "⚡ 150 kW", price: "€0.35/kWh", points: "Earn 1x", btnText: "Start Charging", bonus: null },
-            { title: "Airport Fast Charge", img: "https://images.unsplash.com/photo-1646700547076-78b17b6a127a?auto=format&fit=crop&w=800&q=80", address: "Terminal 2 Parking", distance: "2.1 mi", rating: "4.9", label1: "Availability", val1: "5 of 12 spots", label2: "Speed", val2: "⚡ 250 kW", price: "€0.45/kWh", points: "Earn 2x", btnText: "Start Charging", bonus: "+50 Pts" },
-            { title: "Westside Mall Station", img: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80", address: "Shopping District", distance: "4.5 mi", rating: "4.7", label1: "Availability", val1: "2 of 6 spots", label2: "Speed", val2: "⚡ 150 kW", price: "€0.30/kWh", points: "Earn 1x", btnText: "Start Charging", bonus: null }
-        ],
-        office: [
-            { title: "Office Pod: Plaza", img: "https://i.imgur.com/8Q5gY7s.jpeg", address: "Central Plaza Hub", distance: "0.1 mi", rating: "4.9", label1: "Type", val1: "Focus Pod (1P)", label2: "Amenities", val2: "📶 WiFi, AC", price: "€12/hr", points: "350 pts", btnText: "Unlock Pod", bonus: "Quiet Zone" },
-            { title: "Meeting Box: Tech Park", img: "https://i.imgur.com/0y5d8fK.jpeg", address: "Innovation District", distance: "1.5 mi", rating: "4.8", label1: "Type", val1: "Meeting (4P)", label2: "Amenities", val2: "📺 Screen, Coffee", price: "€25/hr", points: "750 pts", btnText: "Unlock Box", bonus: null }
-        ],
-        playground: [
-            { title: "Play Box: City Park", img: "https://i.imgur.com/a1b2c3d.jpeg", address: "Main Park Entrance", distance: "0.2 mi", rating: "4.9", label1: "Ages", val1: "3 - 8 Years", label2: "Features", val2: "Slides, Ball Pit", price: "€10/hr", points: "300 pts", btnText: "Book Slot", bonus: "Sanitized" },
-            { title: "Play Box: Beach", img: "https://i.imgur.com/a1b2c3d.jpeg", address: "Ocean Promenade", distance: "8.0 mi", rating: "4.9", label1: "Ages", val1: "4 - 10 Years", label2: "Features", val2: "Climbing Wall", price: "€12/hr", points: "350 pts", btnText: "Book Slot", bonus: "Sea View" }
-        ],
-        // NEW: Group Bundles Data
-        group_bundles: [
-            { 
-                title: "Startup Team Sprint", 
-                img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80", 
-                address: "Innovation District", 
-                distance: "1.5 mi", 
-                rating: "5.0", 
-                label1: "Includes", 
-                val1: "4 Office Pods + Coffee", 
-                label2: "Savings", 
-                val2: "🔥 20% Off", 
-                price: "€45/hr", 
-                points: "2000 pts", 
-                btnText: "Book for Group", 
-                bonus: "Group Rate" 
-            },
-            { 
-                title: "Kids Party Package", 
-                img: "https://images.unsplash.com/photo-1536329329709-a7238692795f?auto=format&fit=crop&w=800&q=80", 
-                address: "Westside Mall", 
-                distance: "4.5 mi", 
-                rating: "4.8", 
-                label1: "Includes", 
-                val1: "3 Play Boxes + Lounge", 
-                label2: "Savings", 
-                val2: "🔥 15% Off", 
-                price: "€35/hr", 
-                points: "1500 pts", 
-                btnText: "Book for Group", 
-                bonus: "Party Pack" 
-            },
-            { 
-                title: "Developers Hackathon", 
-                img: "https://images.unsplash.com/photo-1504384308090-c54be3855833?auto=format&fit=crop&w=800&q=80", 
-                address: "Central Train Station", 
-                distance: "0.8 mi", 
-                rating: "4.9", 
-                label1: "Includes", 
-                val1: "6 Focus Pods", 
-                label2: "Savings", 
-                val2: "🔥 25% Off", 
-                price: "€60/hr", 
-                points: "3000 pts", 
-                btnText: "Book for Group", 
-                bonus: "Fast WiFi" 
-            }
-        ],
-        retail: [
-            { title: "Smart Market Box", img: "https://images.unsplash.com/photo-1601599561213-832382fd07ba?auto=format&fit=crop&w=800&q=80", address: "Metro Station Exit", distance: "0.1 mi", rating: "4.5", label1: "Type", val1: "Fresh Food", label2: "Status", val2: "Open 24/7", price: "Shop", points: "Earn Points", btnText: "Open Door", bonus: "Restocked" },
-            { title: "Coffee Bot", img: "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=800&q=80", address: "Business District", distance: "0.5 mi", rating: "4.7", label1: "Type", val1: "Auto-Barista", label2: "Menu", val2: "Hot/Cold Brew", price: "Order", points: "Double Pts", btnText: "Order Now", bonus: "No Queue" }
-        ]
-    };
-
-    const sectionHeadings = {
-        charging: { h2: "Charging Stations", p: "High-speed chargers available across the city" },
-        office: { h2: "Work Pods", p: "Soundproof, private spaces for calls and focus work" },
-        playground: { h2: "Play Boxes", p: "Safe, enclosed play areas for children" },
-        group_bundles: { h2: "Group Bundles", p: "Book multiple pods together for teams and events" },
-        retail: { h2: "Automated Retail", p: "24/7 smart vending for food, tech, and coffee" }
-    };
-
-    const container = document.getElementById('booking-grid-container');
-    const headingH2 = document.getElementById('section-heading');
-    const headingP = document.getElementById('section-subheading');
-    const tabs = document.querySelectorAll('.filter-tab');
-
-    function renderCards(category) {
-        container.innerHTML = '';
-        headingH2.innerText = sectionHeadings[category].h2;
-        headingP.innerText = sectionHeadings[category].p;
-
-        const items = placesData[category];
-        items.forEach(item => {
-            const bonusBadge = item.bonus ? `<span class="badge-bonus">${item.bonus}</span>` : '';
-            const cardHTML = `
-                <div class="booking-card">
-                    <div class="card-image-wrapper">
-                        ${bonusBadge}
-                        <img src="${item.img}" alt="${item.title}" class="card-img">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">${item.title}</h3>
-                        <div class="card-meta">
-                            <div class="meta-row">
-                                <span class="icon-grey">📍</span> ${item.address}
-                            </div>
-                            <div class="meta-row secondary">
-                                <span>🕒 ${item.distance}</span>
-                                <span class="rating">★ ${item.rating}</span>
-                            </div>
-                        </div>
-                        <div class="info-box">
-                            <div class="info-col">
-                                <span class="label">${item.label1}</span>
-                                <span class="value-dark">${item.val1}</span>
-                            </div>
-                            <div class="info-col right">
-                                <span class="label">${item.label2}</span>
-                                <span class="value-cyan">${item.val2}</span>
-                            </div>
-                        </div>
-                        <div class="cost-row">
-                            <div class="cost-col">
-                                <span class="label">Cost</span>
-                                <span class="price">${item.price}</span>
-                            </div>
-                            <div class="points-col">
-                                ${item.points}
-                            </div>
-                        </div>
-                        <button class="btn-block">${item.btnText}</button>
-                    </div>
-                </div>
-            `;
-            container.innerHTML += cardHTML;
-        });
-    }
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            const category = tab.getAttribute('data-category');
-            renderCards(category);
-        });
-    });
-
-    renderCards('charging');
-</script>
+<footer class="footer"><div class="footer-container"><p>&copy; 2025 ChargeReward Inc.</p></div></footer>
 </body>
 </html>
