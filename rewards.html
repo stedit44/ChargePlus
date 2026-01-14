@@ -33,48 +33,91 @@
 <div class="main-content">
     <div class="page-heading">
         <h1>Rewards</h1>
-        <p>Redeem points for offers.</p>
+        <p>Redeem your points for exclusive offers.</p>
     </div>
 
-    <div class="points-hero">
-        <div class="points-content">
-            <span class="label">Balance</span>
-            <div class="big-points">2,847</div>
-            <div class="progress-section">
-                <div style="display:flex; justify-content:space-between; margin-bottom:5px; font-size:0.8rem;">
-                    <span>Gold Tier</span>
-                    <span>153 pts to go</span>
+    <div class="bento-grid">
+        
+        <div class="bento-card card-blue span-2">
+            <div class="bento-title" style="color: rgba(255,255,255,0.8);">Current Balance</div>
+            <div class="bento-value">2,847 <span style="font-size: 1.5rem; opacity: 0.8;">pts</span></div>
+            <div style="margin-top: 15px;">
+                <button style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600;">History</button>
+            </div>
+        </div>
+
+        <div class="bento-card span-2" style="display: flex; flex-direction: column; justify-content: center;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h3 style="margin: 0; font-size: 1.1rem;">Gold Tier Status</h3>
+                <span style="background: #fef3c7; color: #d97706; padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: 700;">Silver</span>
+            </div>
+            <div class="progress-bar" style="height: 12px; background: #e2e8f0;">
+                <div class="progress-fill" style="width: 85%; background: var(--gradient-gold);"></div>
+            </div>
+            <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-grey);"><strong>153 pts</strong> until Gold benefits unlock.</p>
+        </div>
+
+        <div class="bento-card">
+            <div style="font-size: 2.5rem; margin-bottom: 10px;">⛽</div>
+            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 5px;">$10 Credit</div>
+            <div style="font-size: 0.85rem; color: var(--text-grey); margin-bottom: 15px;">Charging credits</div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 700; color: var(--accent-cyan);">500 pts</span>
+                <button class="btn-redeem" style="padding: 6px 12px; font-size: 0.8rem;">Claim</button>
+            </div>
+        </div>
+
+        <div class="bento-card">
+            <div style="font-size: 2.5rem; margin-bottom: 10px;">☕</div>
+            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 5px;">Free Coffee</div>
+            <div style="font-size: 0.85rem; color: var(--text-grey); margin-bottom: 15px;">Partner Cafes</div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 700; color: var(--accent-cyan);">150 pts</span>
+                <button class="btn-redeem" style="padding: 6px 12px; font-size: 0.8rem;">Claim</button>
+            </div>
+        </div>
+
+        <div class="bento-card">
+            <div style="font-size: 2.5rem; margin-bottom: 10px;">🛍️</div>
+            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 5px;">$25 Gift Card</div>
+            <div style="font-size: 0.85rem; color: var(--text-grey); margin-bottom: 15px;">Retail Partners</div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 700; color: var(--accent-cyan);">1200 pts</span>
+                <button class="btn-redeem" style="padding: 6px 12px; font-size: 0.8rem;">Claim</button>
+            </div>
+        </div>
+
+        <div class="bento-card">
+            <div style="font-size: 2.5rem; margin-bottom: 10px;">✨</div>
+            <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 5px;">Car Wash</div>
+            <div style="font-size: 0.85rem; color: var(--text-grey); margin-bottom: 15px;">Premium Service</div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 700; color: var(--accent-cyan);">800 pts</span>
+                <button class="btn-redeem" style="padding: 6px 12px; font-size: 0.8rem;">Claim</button>
+            </div>
+        </div>
+
+        <div class="bento-card span-full" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                <div style="font-size: 1.5rem; background: rgba(255,255,255,0.2); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">🚀</div>
+                <h3 style="margin: 0; font-size: 1.2rem;">Boost Your Points</h3>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 12px;">
+                    <div style="font-weight: 700; margin-bottom: 5px;">+50 pts</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Try a new station location</div>
                 </div>
-                <div style="background:rgba(0,0,0,0.2); height:6px; border-radius:10px;"><div style="width:85%; background:white; height:100%; border-radius:10px;"></div></div>
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 12px;">
+                    <div style="font-weight: 700; margin-bottom: 5px;">+200 pts</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Refer a friend to the app</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 12px;">
+                    <div style="font-weight: 700; margin-bottom: 5px;">+25 pts</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Charge during off-peak hours</div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <h3 class="section-title">Redeem</h3>
-
-    <div class="rewards-grid-new">
-        <div class="reward-card-new">
-            <div class="reward-top">
-                <div class="reward-icon-box blue">⛽</div>
-                <div><h4>$10 Credit</h4><p>Charging</p></div>
-            </div>
-            <div class="reward-bottom"><span class="pts-cost">500 pts</span><button class="btn-redeem">Claim</button></div>
-        </div>
-        <div class="reward-card-new">
-            <div class="reward-top">
-                <div class="reward-icon-box teal">☕</div>
-                <div><h4>Free Coffee</h4><p>Cafe</p></div>
-            </div>
-            <div class="reward-bottom"><span class="pts-cost">150 pts</span><button class="btn-redeem">Claim</button></div>
-        </div>
-    </div>
-
-    <div class="bonus-panel">
-        <div class="bonus-header"><span class="bonus-icon">✨</span><h3>Bonus Points</h3></div>
-        <ul class="bonus-list">
-            <li><span>•</span> Charge new stations: <strong>+50</strong></li>
-            <li><span>•</span> Refer a friend: <strong>+200</strong></li>
-        </ul>
     </div>
 </div>
 
